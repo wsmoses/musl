@@ -1,5 +1,5 @@
 #!/bin/sh
-cc="@CC@"
+cxx="@CXX@"
 libc="@PREFIX@"
 libc_inc="@INCDIR@"
 libc_lib="@LIBDIR@"
@@ -20,12 +20,13 @@ for x ; do
     #fi
 done
 
-exec $cc \
+exec $cxx \
     -B"$thisdir" \
     -fuse-ld=musl-clang \
     -static-libgcc \
     -nostdinc \
-    -Xclang -internal-isystem -Xclang $($cc -print-resource-dir)/include \
+    -stdlib=libc++ \
+    -Xclang -internal-isystem -Xclang $($cxx -print-resource-dir)/include \
     --sysroot "$libc" \
     -Xclang -internal-isystem -Xclang "$libc_inc" \
     -L-user-start \
@@ -33,4 +34,8 @@ exec $cc \
     "$@" \
     $eflags \
     -L"$libc_lib" \
+    $libc_lib/libc++.a \
+    $libc_lib/libc++abi.a \
     -L-user-end
+
+#-Wl,-Bstatic -lc++ \

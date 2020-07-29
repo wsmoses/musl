@@ -20,6 +20,14 @@ for x ; do
     #fi
 done
 
+f=""
+if [ -f "$libc_lib/libc++.a" ]; then
+f="$libc_lib/libc++.a"
+fi
+if [ -f "$libc_lib/libc++abi.a" ]; then
+f="${f} $libc_lib/libc++abi.a"
+fi
+
 exec $cxx \
     -B"$thisdir" \
     -fuse-ld=musl-clang \
@@ -34,8 +42,7 @@ exec $cxx \
     "$@" \
     $eflags \
     -L"$libc_lib" \
-    $libc_lib/libc++.a \
-    $libc_lib/libc++abi.a \
+    $f \
     -L-user-end
 
 #-Wl,-Bstatic -lc++ \

@@ -71,7 +71,8 @@ ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
 ALL_TOOLS = obj/musl-gcc
 
 WRAPCC_GCC = gcc
-WRAPCC_CLANG = clang
+WRAPCC_CLANG = clang-10
+WRAPCC_CLANGXX = clang\+\+\-10
 
 LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
 
@@ -189,7 +190,7 @@ obj/%-clang: $(srcdir)/tools/%-clang.in config.mak
 	chmod +x $@
 
 obj/%-clang++: $(srcdir)/tools/%-clang++.in config.mak
-	sed -e 's!@CXX@!$(WRAPCC_CLANG)!g' -e 's!@PREFIX@!$(prefix)!g' -e 's!@INCDIR@!$(includedir)!g' -e 's!@LIBDIR@!$(libdir)!g' -e 's!@LDSO@!$(LDSO_PATHNAME)!g' $< > $@
+	sed -e 's!@CXX@!$(WRAPCC_CLANGXX)!g' -e 's!@PREFIX@!$(prefix)!g' -e 's!@INCDIR@!$(includedir)!g' -e 's!@LIBDIR@!$(libdir)!g' -e 's!@LDSO@!$(LDSO_PATHNAME)!g' $< > $@
 	chmod +x $@
 
 $(DESTDIR)$(bindir)/%: obj/%

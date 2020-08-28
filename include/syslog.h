@@ -69,7 +69,7 @@ void vsyslog (int, const char *, va_list);
 #if defined(SYSLOG_NAMES)
 #define	INTERNAL_NOPRI 0x10
 #define	INTERNAL_MARK (LOG_NFACILITIES<<3)
-typedef struct {
+typedef struct mystruct_45892100 {
 	char *c_name;
 	int c_val;
 } CODE;

@@ -14,7 +14,7 @@
 #define inline inline __attribute__((always_inline))
 #endif
 
-static struct {
+static struct mystruct_13011379 {
 	volatile uint64_t binmap;
 	struct bin bins[64];
 	volatile int split_merge_lock[2];

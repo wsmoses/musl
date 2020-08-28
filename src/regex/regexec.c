@@ -155,12 +155,12 @@ tre_neg_char_classes_match(tre_ctype_t *classes, tre_cint_t wc, int icase)
   See `tre-match-backtrack.c'.
 */
 
-typedef struct {
+typedef struct mystruct_59741451 {
   tre_tnfa_transition_t *state;
   regoff_t *tags;
 } tre_tnfa_reach_t;
 
-typedef struct {
+typedef struct mystruct_10501048 {
   regoff_t pos;
   regoff_t **tags;
 } tre_reach_pos_t;
@@ -489,7 +489,7 @@ error_exit:
 
 */
 
-typedef struct {
+typedef struct mystruct_59644792 {
   regoff_t pos;
   const char *str_byte;
   tre_tnfa_transition_t *state;

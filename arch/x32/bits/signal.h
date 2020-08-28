@@ -77,13 +77,13 @@ struct sigcontext {
 	struct _fpstate *fpstate;
 	unsigned long long __reserved1[8];
 };
-typedef struct {
+typedef struct mystruct_94350544 {
 	gregset_t gregs;
 	fpregset_t fpregs;
 	unsigned long long __reserved1[8];
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_75329954 {
 	unsigned long long __space[32];
 } mcontext_t;
 #endif

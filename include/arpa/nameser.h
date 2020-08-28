@@ -321,7 +321,7 @@ int ns_name_uncompress(const unsigned char *, const unsigned char *, const unsig
 
 #define	__BIND		19950621
 
-typedef struct {
+typedef struct mystruct_96813237 {
 	unsigned	id :16;
 #if __BYTE_ORDER == __BIG_ENDIAN
 	unsigned	qr: 1;

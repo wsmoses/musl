@@ -8,7 +8,7 @@
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
 typedef unsigned long long greg_t, gregset_t[32];
-typedef struct {
+typedef struct mystruct_96654073 {
 	union {
 		double fp_dregs[32];
 		struct {
@@ -26,7 +26,7 @@ struct sigcontext {
 	unsigned long long sc_mdhi, sc_mdlo;
 	unsigned long sc_hi1, sc_lo1, sc_hi2, sc_lo2, sc_hi3, sc_lo3;
 };
-typedef struct {
+typedef struct mystruct_71731524 {
 	unsigned regmask, status;
 	unsigned long long pc;
 	gregset_t gregs;
@@ -36,7 +36,7 @@ typedef struct {
 	unsigned long hi1, lo1, hi2, lo2, hi3, lo3;
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_10705501 {
 	unsigned __mc1[2];
 	unsigned long long __mc2[65];
 	unsigned __mc3[5];

@@ -27,7 +27,7 @@ int setlogmask(int maskpri)
 	return ret;
 }
 
-static const struct {
+static const struct mystruct_31119539 {
 	short sun_family;
 	char sun_path[9];
 } log_addr = {

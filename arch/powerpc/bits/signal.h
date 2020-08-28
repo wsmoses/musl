@@ -10,13 +10,13 @@
 
 typedef unsigned long greg_t, gregset_t[48];
 
-typedef struct {
+typedef struct mystruct_83918095 {
 	double fpregs[32];
 	double fpscr;
 	unsigned _pad[2];
 } fpregset_t;
 
-typedef struct {
+typedef struct mystruct_40388326 {
 	unsigned vrregs[32][4];
 	unsigned vrsave;
 	unsigned _pad[2];
@@ -31,7 +31,7 @@ struct sigcontext {
 	struct pt_regs *regs;
 };
 
-typedef struct {
+typedef struct mystruct_88725510 {
 	gregset_t gregs;
 	fpregset_t fpregs;
 	vrregset_t vrregs
@@ -43,7 +43,7 @@ typedef struct {
 
 #else
 
-typedef struct {
+typedef struct mystruct_29747813 {
 	long __regs[48+68+4*32+4]
 #ifdef __GNUC__
 	__attribute__((__aligned__(16)))

@@ -59,17 +59,17 @@ struct sigcontext {
 };
 
 typedef int greg_t, gregset_t[18];
-typedef struct {
+typedef struct mystruct_61629108 {
 	int f_pcr, f_psr, f_fpiaddr, f_fpregs[8][3];
 } fpregset_t;
 
-typedef struct {
+typedef struct mystruct_84557795 {
 	int version;
 	gregset_t gregs;
 	fpregset_t fpregs;
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_32036565 {
 	int __version;
 	int __gregs[18];
 	int __fpregs[27];

@@ -16,7 +16,7 @@ struct user {
 #define ELF_NVRREG 34
 typedef unsigned long elf_greg_t, elf_gregset_t[ELF_NGREG];
 typedef double elf_fpreg_t, elf_fpregset_t[ELF_NFPREG];
-typedef struct { unsigned u[4]; }
+typedef struct mystruct_36135995 { unsigned u[4]; }
 #ifdef __GNUC__
 __attribute__((__aligned__(16)))
 #endif

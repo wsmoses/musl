@@ -19,7 +19,7 @@ typedef struct re_pattern_buffer {
 	char __padding2;
 } regex_t;
 
-typedef struct {
+typedef struct mystruct_23577423 {
 	regoff_t rm_so;
 	regoff_t rm_eo;
 } regmatch_t;

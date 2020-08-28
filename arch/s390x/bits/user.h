@@ -6,7 +6,7 @@ typedef union {
 	float f;
 } elf_fpreg_t;
 
-typedef struct {
+typedef struct mystruct_5611298 {
 	unsigned fpc;
 	elf_fpreg_t fprs[16];
 } elf_fpregset_t;

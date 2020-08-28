@@ -11,7 +11,7 @@
 typedef unsigned long greg_t, gregset_t[48];
 typedef double fpregset_t[33];
 
-typedef struct {
+typedef struct mystruct_13974863 {
 #ifdef __GNUC__
 	__attribute__((__aligned__(16)))
 #endif
@@ -41,7 +41,7 @@ typedef struct sigcontext {
 
 #else
 
-typedef struct {
+typedef struct mystruct_43642058 {
 	long __regs[4+4+48+33+1+34+34+32+1];
 } mcontext_t;
 

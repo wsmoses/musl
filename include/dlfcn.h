@@ -25,7 +25,7 @@ void  *dlopen(const char *, int);
 void  *dlsym(void *__restrict, const char *__restrict);
 
 #if defined(_GNU_SOURCE) || defined(_BSD_SOURCE)
-typedef struct {
+typedef struct mystruct_40446068 {
 	const char *dli_fname;
 	void *dli_fbase;
 	const char *dli_sname;

@@ -20,7 +20,7 @@ typedef struct sigcontext {
 	unsigned long oldmask;
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_9883367 {
 	unsigned long __regs[39];
 } mcontext_t;
 #endif

@@ -13,7 +13,7 @@
 #include <pthread.h>
 #include "lock.h"
 
-static struct {
+static struct mystruct_23786181 {
 	ino_t ino;
 	sem_t *sem;
 	int refcnt;

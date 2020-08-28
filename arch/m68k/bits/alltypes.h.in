@@ -22,4 +22,4 @@ TYPEDEF long double float_t;
 TYPEDEF long double double_t;
 #endif
 
-TYPEDEF struct { long long __ll; long double __ld; } max_align_t;
+TYPEDEF struct mystruct_4019980 { long long __ll; long double __ld; } max_align_t;

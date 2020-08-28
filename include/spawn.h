@@ -24,7 +24,7 @@ struct sched_param;
 #define POSIX_SPAWN_USEVFORK 64
 #define POSIX_SPAWN_SETSID 128
 
-typedef struct {
+typedef struct mystruct_45058911 {
 	int __flags;
 	pid_t __pgrp;
 	sigset_t __def, __mask;
@@ -33,7 +33,7 @@ typedef struct {
 	char __pad[64-sizeof(void *)];
 } posix_spawnattr_t;
 
-typedef struct {
+typedef struct mystruct_30012568 {
 	int __pad0[2];
 	void *__actions;
 	int __pad[16];

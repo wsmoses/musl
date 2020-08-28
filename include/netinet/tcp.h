@@ -113,7 +113,7 @@ struct tcphdr {
 #ifdef __GNUC__
 	__extension__
 #endif
-	union { struct {
+	union { struct mystruct_46260754 {
 
 	uint16_t source;
 	uint16_t dest;
@@ -144,7 +144,7 @@ struct tcphdr {
 	uint16_t check;
 	uint16_t urg_ptr;
 
-	}; struct {
+	}; struct mystruct_96867477 {
 #endif
 
 	uint16_t th_sport;

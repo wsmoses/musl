@@ -19,7 +19,7 @@ typedef struct sigcontext {
 	unsigned int sc_fpscr, sc_fpul, sc_ownedfp;
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_40004425 {
 	unsigned long __regs[58];
 } mcontext_t;
 #endif

@@ -11,7 +11,7 @@
 
 typedef unsigned int fexcept_t;
 
-typedef struct {
+typedef struct mystruct_87093429 {
 	unsigned int __fpcr;
 	unsigned int __fpsr;
 } fenv_t;

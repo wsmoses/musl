@@ -17,7 +17,7 @@ typedef struct sigcontext {
 	unsigned long arm_cpsr, fault_address;
 } mcontext_t;
 #else
-typedef struct {
+typedef struct mystruct_45185384 {
 	unsigned long __regs[21];
 } mcontext_t;
 #endif

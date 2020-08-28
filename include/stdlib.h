@@ -59,9 +59,9 @@ int abs (int);
 long labs (long);
 long long llabs (long long);
 
-typedef struct { int quot, rem; } div_t;
-typedef struct { long quot, rem; } ldiv_t;
-typedef struct { long long quot, rem; } lldiv_t;
+typedef struct mystruct_79849586 { int quot, rem; } div_t;
+typedef struct mystruct_63168695 { long quot, rem; } ldiv_t;
+typedef struct mystruct_75454700 { long long quot, rem; } lldiv_t;
 
 div_t div (int, int);
 ldiv_t ldiv (long, long);

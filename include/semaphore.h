@@ -14,7 +14,7 @@ extern "C" {
 
 #define SEM_FAILED ((sem_t *)0)
 
-typedef struct {
+typedef struct mystruct_44666850 {
 	volatile int __val[4*sizeof(long)/sizeof(int)];
 } sem_t;
 

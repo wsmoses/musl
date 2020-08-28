@@ -12,4 +12,4 @@ TYPEDEF int wchar_t;
 TYPEDEF double float_t;
 TYPEDEF double double_t;
 
-TYPEDEF struct { long long __ll; long double __ld; } max_align_t;
+TYPEDEF struct mystruct_72937605 { long long __ll; long double __ld; } max_align_t;

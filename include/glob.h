@@ -11,7 +11,7 @@ extern "C" {
 
 #include <bits/alltypes.h>
 
-typedef struct {
+typedef struct mystruct_46183147 {
 	size_t gl_pathc;
 	char **gl_pathv;
 	size_t gl_offs;

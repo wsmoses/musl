@@ -14,7 +14,7 @@
 
 typedef unsigned short fexcept_t;
 
-typedef struct {
+typedef struct mystruct_28798692 {
 	unsigned short __control_word;
 	unsigned short __unused1;
 	unsigned short __status_word;

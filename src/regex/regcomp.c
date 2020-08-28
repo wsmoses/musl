@@ -44,7 +44,7 @@
  from tre-compile.h
 ***********************************************************************/
 
-typedef struct {
+typedef struct mystruct_18260223 {
   int position;
   int code_min;
   int code_max;
@@ -83,7 +83,7 @@ typedef enum {
 
 /* A generic AST node.  All AST nodes consist of this node on the top
    level with `obj' pointing to the actual content. */
-typedef struct {
+typedef struct mystruct_88521760 {
   tre_ast_type_t type;   /* Type of the node. */
   void *obj;             /* Pointer to actual node. */
   int nullable;
@@ -98,7 +98,7 @@ typedef struct {
 /* A "literal" node.  These are created for assertions, back references,
    tags, matching parameter settings, and all expressions that match one
    character. */
-typedef struct {
+typedef struct mystruct_51112501 {
   long code_min;
   long code_max;
   int position;
@@ -110,14 +110,14 @@ typedef struct {
    If there are more than one subexpressions in sequence, the `left' part
    holds all but the last, and `right' part holds the last subexpression
    (catenation is left associative). */
-typedef struct {
+typedef struct mystruct_46689673 {
   tre_ast_node_t *left;
   tre_ast_node_t *right;
 } tre_catenation_t;
 
 /* An "iteration" node.	 These are created for the "*", "+", "?", and "{m,n}"
    operators. */
-typedef struct {
+typedef struct mystruct_41003044 {
   /* Subexpression to match. */
   tre_ast_node_t *arg;
   /* Minimum number of consecutive matches. */
@@ -131,7 +131,7 @@ typedef struct {
 } tre_iteration_t;
 
 /* An "union" node.  These are created for the "|" operator. */
-typedef struct {
+typedef struct mystruct_14711391 {
   tre_ast_node_t *left;
   tre_ast_node_t *right;
 } tre_union_t;
@@ -392,7 +392,7 @@ define_popf(voidptr, void *)
 ***********************************************************************/
 
 /* Parse context. */
-typedef struct {
+typedef struct mystruct_67915443 {
 	/* Memory allocator. The AST is allocated using this. */
 	tre_mem_t mem;
 	/* Stack used for keeping track of regexp syntax. */
@@ -414,7 +414,7 @@ typedef struct {
 } tre_parse_ctx_t;
 
 /* Some macros for expanding \w, \s, etc. */
-static const struct {
+static const struct mystruct_87347579 {
 	char c;
 	const char *expansion;
 } tre_macros[] = {
@@ -1171,7 +1171,7 @@ typedef enum {
 } tre_addtags_symbol_t;
 
 
-typedef struct {
+typedef struct mystruct_42953647 {
   int tag;
   int next_tag;
 } tre_tag_states_t;

@@ -18,7 +18,7 @@ extern "C" {
 #define WRDE_SHOWERR 16
 #define WRDE_UNDEF   32
 
-typedef struct {
+typedef struct mystruct_75785838 {
 	size_t we_wordc;
 	char **we_wordv;
 	size_t we_offs;

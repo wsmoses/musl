@@ -94,7 +94,7 @@ union sigval {
 	void *sival_ptr;
 };
 
-typedef struct {
+typedef struct mystruct_2469338 {
 #ifdef __SI_SWAP_ERRNO_CODE
 	int si_signo, si_code, si_errno;
 #else

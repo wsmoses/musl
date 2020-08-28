@@ -34,7 +34,7 @@ typedef Elf64_Half Elf64_Versym;
 
 #define EI_NIDENT (16)
 
-typedef struct {
+typedef struct mystruct_24919465 {
   unsigned char	e_ident[EI_NIDENT];
   Elf32_Half	e_type;
   Elf32_Half	e_machine;
@@ -51,7 +51,7 @@ typedef struct {
   Elf32_Half	e_shstrndx;
 } Elf32_Ehdr;
 
-typedef struct {
+typedef struct mystruct_7674659 {
   unsigned char	e_ident[EI_NIDENT];
   Elf64_Half	e_type;
   Elf64_Half	e_machine;
@@ -323,7 +323,7 @@ typedef struct {
 #define EV_CURRENT	1
 #define EV_NUM		2
 
-typedef struct {
+typedef struct mystruct_6762580 {
   Elf32_Word	sh_name;
   Elf32_Word	sh_type;
   Elf32_Word	sh_flags;
@@ -336,7 +336,7 @@ typedef struct {
   Elf32_Word	sh_entsize;
 } Elf32_Shdr;
 
-typedef struct {
+typedef struct mystruct_9124898 {
   Elf64_Word	sh_name;
   Elf64_Word	sh_type;
   Elf64_Xword	sh_flags;
@@ -422,13 +422,13 @@ typedef struct {
 #define SHF_ORDERED	     (1 << 30)
 #define SHF_EXCLUDE	     (1U << 31)
 
-typedef struct {
+typedef struct mystruct_33188242 {
   Elf32_Word	ch_type;
   Elf32_Word	ch_size;
   Elf32_Word	ch_addralign;
 } Elf32_Chdr;
 
-typedef struct {
+typedef struct mystruct_2070076 {
   Elf64_Word	ch_type;
   Elf64_Word	ch_reserved;
   Elf64_Xword	ch_size;
@@ -444,7 +444,7 @@ typedef struct {
 
 #define GRP_COMDAT	0x1
 
-typedef struct {
+typedef struct mystruct_80923165 {
   Elf32_Word	st_name;
   Elf32_Addr	st_value;
   Elf32_Word	st_size;
@@ -453,7 +453,7 @@ typedef struct {
   Elf32_Section	st_shndx;
 } Elf32_Sym;
 
-typedef struct {
+typedef struct mystruct_15065420 {
   Elf64_Word	st_name;
   unsigned char	st_info;
   unsigned char st_other;
@@ -462,12 +462,12 @@ typedef struct {
   Elf64_Xword	st_size;
 } Elf64_Sym;
 
-typedef struct {
+typedef struct mystruct_89498683 {
   Elf32_Half si_boundto;
   Elf32_Half si_flags;
 } Elf32_Syminfo;
 
-typedef struct {
+typedef struct mystruct_53073663 {
   Elf64_Half si_boundto;
   Elf64_Half si_flags;
 } Elf64_Syminfo;
@@ -530,25 +530,25 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_91048866 {
   Elf32_Addr	r_offset;
   Elf32_Word	r_info;
 } Elf32_Rel;
 
-typedef struct {
+typedef struct mystruct_31227340 {
   Elf64_Addr	r_offset;
   Elf64_Xword	r_info;
 } Elf64_Rel;
 
 
 
-typedef struct {
+typedef struct mystruct_21934355 {
   Elf32_Addr	r_offset;
   Elf32_Word	r_info;
   Elf32_Sword	r_addend;
 } Elf32_Rela;
 
-typedef struct {
+typedef struct mystruct_5197553 {
   Elf64_Addr	r_offset;
   Elf64_Xword	r_info;
   Elf64_Sxword	r_addend;
@@ -566,7 +566,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_85734458 {
   Elf32_Word	p_type;
   Elf32_Off	p_offset;
   Elf32_Addr	p_vaddr;
@@ -577,7 +577,7 @@ typedef struct {
   Elf32_Word	p_align;
 } Elf32_Phdr;
 
-typedef struct {
+typedef struct mystruct_92339873 {
   Elf64_Word	p_type;
   Elf64_Word	p_flags;
   Elf64_Off	p_offset;
@@ -698,7 +698,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_64130582 {
   Elf32_Sword d_tag;
   union {
       Elf32_Word d_val;
@@ -706,7 +706,7 @@ typedef struct {
   } d_un;
 } Elf32_Dyn;
 
-typedef struct {
+typedef struct mystruct_83638905 {
   Elf64_Sxword d_tag;
   union {
       Elf64_Xword d_val;
@@ -864,7 +864,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_93086764 {
   Elf32_Half	vd_version;
   Elf32_Half	vd_flags;
   Elf32_Half	vd_ndx;
@@ -874,7 +874,7 @@ typedef struct {
   Elf32_Word	vd_next;
 } Elf32_Verdef;
 
-typedef struct {
+typedef struct mystruct_83383810 {
   Elf64_Half	vd_version;
   Elf64_Half	vd_flags;
   Elf64_Half	vd_ndx;
@@ -902,12 +902,12 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_13878174 {
   Elf32_Word	vda_name;
   Elf32_Word	vda_next;
 } Elf32_Verdaux;
 
-typedef struct {
+typedef struct mystruct_50544482 {
   Elf64_Word	vda_name;
   Elf64_Word	vda_next;
 } Elf64_Verdaux;
@@ -915,7 +915,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_50382247 {
   Elf32_Half	vn_version;
   Elf32_Half	vn_cnt;
   Elf32_Word	vn_file;
@@ -923,7 +923,7 @@ typedef struct {
   Elf32_Word	vn_next;
 } Elf32_Verneed;
 
-typedef struct {
+typedef struct mystruct_24545650 {
   Elf64_Half	vn_version;
   Elf64_Half	vn_cnt;
   Elf64_Word	vn_file;
@@ -939,7 +939,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_83436039 {
   Elf32_Word	vna_hash;
   Elf32_Half	vna_flags;
   Elf32_Half	vna_other;
@@ -947,7 +947,7 @@ typedef struct {
   Elf32_Word	vna_next;
 } Elf32_Vernaux;
 
-typedef struct {
+typedef struct mystruct_89661489 {
   Elf64_Word	vna_hash;
   Elf64_Half	vna_flags;
   Elf64_Half	vna_other;
@@ -961,14 +961,14 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_75410699 {
   uint32_t a_type;
   union {
       uint32_t a_val;
   } a_un;
 } Elf32_auxv_t;
 
-typedef struct {
+typedef struct mystruct_28658264 {
   uint64_t a_type;
   union {
       uint64_t a_val;
@@ -1046,13 +1046,13 @@ typedef struct {
 #define AT_MINSIGSTKSZ		51
 
 
-typedef struct {
+typedef struct mystruct_47434873 {
   Elf32_Word n_namesz;
   Elf32_Word n_descsz;
   Elf32_Word n_type;
 } Elf32_Nhdr;
 
-typedef struct {
+typedef struct mystruct_26338287 {
   Elf64_Word n_namesz;
   Elf64_Word n_descsz;
   Elf64_Word n_type;
@@ -1088,7 +1088,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_56839894 {
   Elf32_Xword m_value;
   Elf32_Word m_info;
   Elf32_Word m_poffset;
@@ -1096,7 +1096,7 @@ typedef struct {
   Elf32_Half m_stride;
 } Elf32_Move;
 
-typedef struct {
+typedef struct mystruct_53514233 {
   Elf64_Xword m_value;
   Elf64_Xword m_info;
   Elf64_Xword m_poffset;
@@ -1436,11 +1436,11 @@ typedef struct {
 
 
 typedef union {
-  struct {
+  struct mystruct_78514411 {
       Elf32_Word gt_current_g_value;
       Elf32_Word gt_unused;
   } gt_header;
-  struct {
+  struct mystruct_86194903 {
       Elf32_Word gt_g_value;
       Elf32_Word gt_bytes;
   } gt_entry;
@@ -1448,7 +1448,7 @@ typedef union {
 
 
 
-typedef struct {
+typedef struct mystruct_73186626 {
   Elf32_Word	ri_gprmask;
   Elf32_Word	ri_cprmask[4];
   Elf32_Sword	ri_gp_value;
@@ -1456,7 +1456,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_15407772 {
   unsigned char kind;
 
   unsigned char size;
@@ -1506,7 +1506,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_17444457 {
   Elf32_Word hwp_flags1;
   Elf32_Word hwp_flags2;
 } Elf_Options_Hw;
@@ -1666,7 +1666,7 @@ typedef struct {
 
 
 
-typedef struct {
+typedef struct mystruct_48280035 {
   Elf32_Word l_name;
   Elf32_Word l_time_stamp;
   Elf32_Word l_checksum;
@@ -1674,7 +1674,7 @@ typedef struct {
   Elf32_Word l_flags;
 } Elf32_Lib;
 
-typedef struct {
+typedef struct mystruct_51062629 {
   Elf64_Word l_name;
   Elf64_Word l_time_stamp;
   Elf64_Word l_checksum;
@@ -1697,7 +1697,7 @@ typedef struct {
 
 typedef Elf32_Addr Elf32_Conflict;
 
-typedef struct {
+typedef struct mystruct_69961306 {
   Elf32_Half version;
   unsigned char isa_level;
   unsigned char isa_rev;

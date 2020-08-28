@@ -23,9 +23,9 @@ TYPEDEF long double double_t;
 #endif
 
 #if !defined(__cplusplus)
-TYPEDEF struct { _Alignas(8) long long __ll; long double __ld; } max_align_t;
+TYPEDEF struct mystruct_12435753 { _Alignas(8) long long __ll; long double __ld; } max_align_t;
 #elif defined(__GNUC__)
-TYPEDEF struct { __attribute__((__aligned__(8))) long long __ll; long double __ld; } max_align_t;
+TYPEDEF struct mystruct_27495360 { __attribute__((__aligned__(8))) long long __ll; long double __ld; } max_align_t;
 #else
-TYPEDEF struct { alignas(8) long long __ll; long double __ld; } max_align_t;
+TYPEDEF struct mystruct_98397473 { alignas(8) long long __ll; long double __ld; } max_align_t;
 #endif

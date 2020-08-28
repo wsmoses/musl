@@ -7,7 +7,7 @@
 #include <limits.h>
 #include "nscd.h"
 
-static const struct {
+static const struct mystruct_66779332 {
 	short sun_family;
 	char sun_path[21];
 } addr = {

@@ -16,7 +16,7 @@
 
 typedef unsigned long fexcept_t;
 
-typedef struct {
+typedef struct mystruct_45357590 {
 	unsigned long __cw;
 } fenv_t;
 

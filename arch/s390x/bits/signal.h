@@ -10,7 +10,7 @@
 
 typedef unsigned long greg_t, gregset_t[27];
 
-typedef struct {
+typedef struct mystruct_19897052 {
 	unsigned long mask;
 	unsigned long addr;
 } __psw_t;
@@ -20,7 +20,7 @@ typedef union {
 	float f;
 } fpreg_t;
 
-typedef struct {
+typedef struct mystruct_80265521 {
 	unsigned fpc;
 	fpreg_t fprs[16];
 } fpregset_t;
@@ -50,7 +50,7 @@ struct sigcontext {
 
 #else
 
-typedef struct {
+typedef struct mystruct_78188767 {
 	unsigned long __regs1[18];
 	unsigned __regs2[18];
 	double __regs3[16];

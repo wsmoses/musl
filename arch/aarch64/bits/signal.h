@@ -10,7 +10,7 @@
 typedef unsigned long greg_t;
 typedef unsigned long gregset_t[34];
 
-typedef struct {
+typedef struct mystruct_15302086 {
 	long double vregs[32];
 	unsigned int fpsr;
 	unsigned int fpcr;
@@ -85,7 +85,7 @@ struct sve_context {
 	(SVE_SIG_FFR_OFFSET(vq) + SVE_SIG_FFR_SIZE(vq) - SVE_SIG_REGS_OFFSET)
 #define SVE_SIG_CONTEXT_SIZE(vq) (SVE_SIG_REGS_OFFSET + SVE_SIG_REGS_SIZE(vq))
 #else
-typedef struct {
+typedef struct mystruct_67775192 {
 	long double __regs[18+256];
 } mcontext_t;
 #endif

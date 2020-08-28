@@ -22,7 +22,7 @@
 
 typedef unsigned fexcept_t;
 
-typedef struct {
+typedef struct mystruct_97407626 {
 	unsigned __control_register, __status_register, __instruction_address;
 } fenv_t;
 

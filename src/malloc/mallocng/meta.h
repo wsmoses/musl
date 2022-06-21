@@ -41,6 +41,7 @@ struct meta_area {
 struct malloc_context {
 	uint64_t secret;
 #ifndef PAGESIZE
+#error "Page Size not found"
 	size_t pagesize;
 #endif
 	int init_done;
@@ -55,9 +56,9 @@ struct malloc_context {
 	uint8_t unmap_seq[32], bounces[32];
 	uint8_t seq;
 	uintptr_t brk;
+    size_t memremaining;
 };
 
-__attribute__((__visibility__("hidden")))
 extern struct malloc_context ctx;
 
 #ifdef PAGESIZE

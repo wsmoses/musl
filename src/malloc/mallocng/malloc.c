@@ -39,6 +39,13 @@ static const uint8_t med_cnt_tab[4] = { 28, 24, 20, 32 };
 
 struct malloc_context ctx = { 0 };
 
+size_t malloc_getmemremaining() {
+    return ctx.memremaining;
+}
+void malloc_setmemremaining(size_t size) {
+    ctx.memremaining = size;
+}
+
 struct meta *alloc_meta(void)
 {
 	struct meta *m;
@@ -69,6 +76,10 @@ struct meta *alloc_meta(void)
 			if (brk(new) != new) {
 				ctx.brk = -1;
 			} else {
+                if (ctx.memremaining && pagesize > ctx.memremaining)
+                    abort();
+                else
+                    ctx.memremaining -= pagesize;
 				if (need_guard) mmap((void *)ctx.brk, pagesize,
 					PROT_NONE, MAP_ANON|MAP_PRIVATE|MAP_FIXED, -1, 0);
 				ctx.brk = new;
@@ -79,6 +90,10 @@ struct meta *alloc_meta(void)
 		}
 		if (!ctx.avail_meta_area_count) {
 			size_t n = 2UL << ctx.meta_alloc_shift;
+            if (ctx.memremaining && n*pagesize > ctx.memremaining)
+                abort();
+            else
+                ctx.memremaining -= n*pagesize;
 			p = mmap(0, n*pagesize, PROT_NONE,
 				MAP_PRIVATE|MAP_ANON, -1, 0);
 			if (p==MAP_FAILED) return 0;
@@ -245,6 +260,11 @@ static struct meta *alloc_group(int sc, size_t req)
 				needed = req;
 			}
 		}
+            
+        if (ctx.memremaining && needed > ctx.memremaining)
+            abort();
+        else
+            ctx.memremaining -= needed;
 
 		p = mmap(0, needed, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANON, -1, 0);
 		if (p==MAP_FAILED) {
@@ -318,6 +338,10 @@ void *malloc(size_t n)
 			munmap(p, needed);
 			return 0;
 		}
+        if (ctx.memremaining && needed > ctx.memremaining)
+            abort();
+        else
+            ctx.memremaining -= needed;
 		g->mem = p;
 		g->mem->meta = g;
 		g->last_idx = 0;

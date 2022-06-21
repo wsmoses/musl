@@ -71,8 +71,8 @@ ALL_LIBS = $(CRT_LIBS) $(STATIC_LIBS) $(SHARED_LIBS) $(EMPTY_LIBS) $(TOOL_LIBS)
 ALL_TOOLS = obj/musl-gcc
 
 WRAPCC_GCC = gcc
-WRAPCC_CLANG = clang-10
-WRAPCC_CLANGXX = clang\+\+\-10
+WRAPCC_CLANG = clang-13
+WRAPCC_CLANGXX = clang\+\+\-13
 
 LDSO_PATHNAME = $(syslibdir)/ld-musl-$(ARCH)$(SUBARCH).so.1
 

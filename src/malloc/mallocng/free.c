@@ -139,5 +139,9 @@ void free(void *p)
 	wrlock();
 	struct mapinfo mi = nontrivial_free(g, idx);
 	unlock();
-	if (mi.len) munmap(mi.base, mi.len);
+	if (mi.len) {
+        if (ctx.memremaining)
+            ctx.memremaining += mi.len;
+        munmap(mi.base, mi.len);
+    }
 }

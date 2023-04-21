@@ -13,11 +13,11 @@ for x ; do
         -l*) input=1 ;;
         *) input= ;;
     esac
-    #if test "$input" ; then
-    #    sflags="-l-user-start"
-    #    eflags="-l-user-end"
-    #    break
-    #fi
+    if test "$input" ; then
+        sflags="-l-user-start"
+        eflags="-l-user-end"
+        break
+    fi
 done
 
 exec $cc \

@@ -78,7 +78,7 @@ struct meta *alloc_meta(void)
 			} else {
                 if (ctx.memremaining && pagesize > ctx.memremaining)
                     abort();
-                else
+                else if (ctx.memremaining)
                     ctx.memremaining -= pagesize;
 				if (need_guard) mmap((void *)ctx.brk, pagesize,
 					PROT_NONE, MAP_ANON|MAP_PRIVATE|MAP_FIXED, -1, 0);
@@ -92,7 +92,7 @@ struct meta *alloc_meta(void)
 			size_t n = 2UL << ctx.meta_alloc_shift;
             if (ctx.memremaining && n*pagesize > ctx.memremaining)
                 abort();
-            else
+            else if (ctx.memremaining)
                 ctx.memremaining -= n*pagesize;
 			p = mmap(0, n*pagesize, PROT_NONE,
 				MAP_PRIVATE|MAP_ANON, -1, 0);
@@ -263,7 +263,7 @@ static struct meta *alloc_group(int sc, size_t req)
             
         if (ctx.memremaining && needed > ctx.memremaining)
             abort();
-        else
+        else if (ctx.memremaining)
             ctx.memremaining -= needed;
 
 		p = mmap(0, needed, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANON, -1, 0);
@@ -340,7 +340,7 @@ void *malloc(size_t n)
 		}
         if (ctx.memremaining && needed > ctx.memremaining)
             abort();
-        else
+        else if (ctx.memremaining)
             ctx.memremaining -= needed;
 		g->mem = p;
 		g->mem->meta = g;

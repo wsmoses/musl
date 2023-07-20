@@ -2,14 +2,61 @@
 cc="@CC@"
 libc_lib="@LIBDIR@"
 ldso="@LDSO@"
-cleared=
 shared=
 userlinkdir=
 userlink=
+all_tmp_files=
 
-for x ; do
-    test "$cleared" || set -- ; cleared=1
+cleanup() {
+    for x in all_tmp_files; do
+        rm $x
+    done
+}
+trap cleanup 0 2 3 15
 
+RET_VAL=
+
+process_arg_list() {
+    local cleared=
+    for x ; do
+        test "$cleared" || set -- ; cleared=1
+
+        RET_VAL=
+        process_arg $x
+        NEW_ARG=$RET_VAL
+        if [ -n "$NEW_ARG" ] ; then
+            set -- "$@" "$NEW_ARG"
+        fi
+    done
+    RET_VAL="$@"
+}
+
+process_response_file() {
+    local cleared=
+    for x in `cat $1`; do
+        test "$cleared" || set -- ; cleared=1
+
+        x=${x#\"} # Remove leading quote
+        x=${x%\"} # Remove trailing quote 
+
+        RET_VAL=
+        process_arg $x
+        NEW_ARG=$RET_VAL
+        if [ -n "$NEW_ARG" ] ; then
+            set -- "$@" "\"$NEW_ARG\""
+        fi
+    done
+    
+    temp_rsp_file=$(mktemp)
+    all_tmp_files="$all_tmp_files $temp_rsp_file"
+
+    echo "$@" > $temp_rsp_file
+    RET_VAL="@$temp_rsp_file"
+}
+
+process_arg() {
+    local x=$1
+    RET_VAL=
     case "$x" in
         -L-user-start)
             userlinkdir=1
@@ -18,7 +65,7 @@ for x ; do
             userlinkdir=
             ;;
         -L*)
-            test "$userlinkdir" && set -- "$@" "$x"
+            test "$userlinkdir" && RET_VAL=$x
             ;;
         -l-user-start)
             userlink=1
@@ -27,26 +74,33 @@ for x ; do
             userlink=
             ;;
         crtbegin*.o|crtend*.o)
-            set -- "$@" $($cc -print-file-name=$x)
+            RET_VAL=$($cc -print-file-name=$x)
             ;;
         -lgcc|-lgcc_eh)
             file=lib${x#-l}.a
-            set -- "$@" $($cc -print-file-name=$file)
+            RET_VAL=$($cc -print-file-name=$file)
             ;;
         -l*)
-            test "$userlink" && set -- "$@" "$x"
+            test "$userlink" && RET_VAL="$x"
             ;;
         -shared)
             shared=1
-            set -- "$@" -shared
+            RET_VAL=-shared
             ;;
         -sysroot=*|--sysroot=*)
             ;;
+        @*)
+            file=${x#@}
+            process_response_file $file
+            ;;
         *)
-            set -- "$@" "$x"
+            RET_VAL="$1"
             ;;
     esac
-done
+}
 
-exec $($cc -print-prog-name=ld.lld) -nostdlib "$@" -lc
+process_arg_list $@
+PROCESSED_ARGS=$RET_VAL
+
+exec $($cc -print-prog-name=ld.lld) -nostdlib $PROCESSED_ARGS -L$libc_lib -lc
 #-dynamic-linker "$ldso"
